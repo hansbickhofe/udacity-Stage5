@@ -1,0 +1,1 @@
+var HTMLOutput = "<h1>%data%</h1><br><h2>%name%</h2>";

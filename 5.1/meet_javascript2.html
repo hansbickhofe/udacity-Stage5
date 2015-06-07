@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Meet Javascript2 - String Manipulation Quiz 1</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="helper.js"></script>
+		<script>
+		function replaceSubstrings(){
+			var originalString = "audacity";
+			var slicedString = "U" + originalString.slice(2);
+			$("#orgString").append(originalString);
+			$("#newString").append(slicedString);
+			
+		};
+		
+		</script>
+	</head>		
+	<body onload="replaceSubstrings();">
+		Meet Javascript2 - String Manipulation Quiz 1<br>
+		<div id="orgString"><hr></div>
+		<div id="newString"><hr></div>
+	</body>
+</html>

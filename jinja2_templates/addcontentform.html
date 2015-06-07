@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+	{% block content %}
+	<hr>
+	<b>Add Note</b><br><br>
+	<div id = "noteform">
+		<form id="noteform" action="/addcontent" method="post">
+		{% if saved %}
+			<div style="color: red" >{{ saved }}</div>
+		{% endif %}
+		
+
+		<label>
+			Header:
+		</label>
+
+		<input type="text" name="header" value="Header">
+		
+		<label>
+			Subheader:
+		</label>
+		
+		<input type="text"name="subheader" value="Subheader">
+		<br>
+		<label>
+			Noteindex:
+		</label>
+		
+		<input type="text"name="noteindex">
+		<br>		
+		<label>
+			Note:
+		</label>
+
+		<textarea name="note" value="" cols="50" rows="10"></textarea>
+		<br>
+		
+		<input type="submit" value="Save Note">
+	</form>
+	</div>
+	{% endblock %}

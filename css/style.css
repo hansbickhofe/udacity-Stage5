@@ -1,0 +1,125 @@
+/* This is a CSS comment.*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-webkit-flex-wrap: wrap; 
+	box-sizing: border-box;
+	/* outline: 1px solid red !important*/
+	
+}
+
+body {
+	background-color: white;
+	font-family: sans-serif;
+	padding-left: 30px;
+	max-width: 100%;
+	display: -webkit-flex; /* Safari */
+    display: flex;   
+    flex-wrap: wrap;
+}
+a { 
+	color: #555; 
+	text-decoration: none
+	}
+h1  {
+	font-family: sans-serif;
+	font-weight: bolder;
+	font-size: x-large;
+}
+
+h2 {
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: large;
+}
+h3 {
+	font-weight: bold;
+	font-size: medium;
+}
+
+h4 {
+	font-style: italic;
+	font-size: small;
+}
+br {
+  content: "";
+  margin: 2em;
+  display: block;
+  font-size: 24%;
+}
+.stagetitle {
+	background-color: rgb(255, 203, 0);
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 5px;
+	border-radius: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	min-width: 80%;
+}
+
+.subtitle {
+	padding-top: 5px;
+	max-width: 100%;
+	
+}
+
+.header {
+	background-color: rgb(255, 203, 0);
+	padding-top: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 8px;
+	border-radius: 15px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	min-width: 100%;
+}
+
+.subheader {
+	background-color: rgb(170, 190, 250);
+	padding-top: 3px;
+	padding-left: 20px;
+	padding-bottom: 5px;
+	margin-top: 10px;
+	margin-bottom: 8px;
+}
+
+.text {
+	font-weight: normal;
+	font-size: 14px;
+	background-color: rgb(170, 190, 250);
+	padding-left: 35px;
+	padding-right: 35px;
+	padding-top: 5px;
+	padding-bottom: 5px ;
+	margin-bottom: 8px;
+}
+.codeExample {
+	font-family: Monospace;
+	font-weight: normal;
+	font-size: 14px;
+	list-style-type: none;
+	margin: 0px;
+	
+}
+
+.comments {
+	font-weight: normal;
+	font-size: 12px;
+	background-color: rgb(180, 200, 260);
+	padding-left: 35px;
+	padding-right: 35px;
+	padding-top: 5px;
+	padding-bottom: 5px ;
+	margin-bottom: 8px;
+	z-index:99;
+	display: none;
+}
+
+/*
+Comments are only to help PEOPLE read a code file. The
+computer ignores them.
+*/

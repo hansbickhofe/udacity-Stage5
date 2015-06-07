@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% for note in lesson_notes recursive %}
+		{% set outer_loop = loop %}
+		
+		<div class="header"><h2>{{ note.header }}</h2>
+		{% if is_admin == 1 %}
+		<form action="/editcontent" method="POST">
+			<input type="hidden" name="edit" value="1">
+			<input type="hidden" name="note_id" value="{{ note.noteid }}">
+			<input type="submit" value="Edit">
+		</form><form action="/editcontent" method="POST">
+			<input type="hidden" name="del" value="1">
+			<input type="hidden" name="note_id" value="{{ note.noteid }}">
+			<input type="submit" value="Delete">
+		</form>
+		{% endif %}
+			<div class="subheader"><h3>{{ note.subheader }}</h3></div>
+		
+			<div class="text">{{ note.note|safe }}</div>
+			<hr>
+			<div class="show_hide_toggle">
+			<a href="#" onclick="toggle_visibility('comments-{{ loop.index0 }}'); return false;">Show/Hide comments</a>
+			</div>
+				<div id="comments-{{ outer_loop.index0 }}" class="comments">
+				{% for comment in note.comments  %}
+					{{ comment.commentauthor }}: {{ comment.commenttext|safe }}<br>	
+				{% endfor %}
+					<div>
+					{% if user %}
+					<form id="comment_form-{{ loop.index0 }}" action="/" method="post">
+						<div>
+							<input type="hidden" name="note_id" value="{{ loop.index0 }}">
+							{{ user }}
+						</div>
+						<div>
+							<textarea name="comment" cols="30" rows="3">Your Comment</textarea>
+						</div>
+						<div>
+						<input type="submit" value="Save your comment">
+						</div>
+					</form>
+					{% endif %}
+					</div> 
+				</div>
+					<hr>
+		</div>
+	{% endfor %}	
+{% endblock %}

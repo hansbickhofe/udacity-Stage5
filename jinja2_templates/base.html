@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ pageheader }}</title>
+	<link rel="stylesheet" href="http://normalize-css.googlecode.com/svn/trunk/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="icon" href="/favicon.ico" sizes="16x16" type="image/png">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script type="text/javascript">
+		function toggle_visibility(div_id) {
+		   var comment_div = document.getElementById(div_id);
+		   if(comment_div.style.display == 'block')
+			  comment_div.style.display = 'none';
+		   else
+			  comment_div.style.display = 'block';
+		}
+	</script>
+
+</head>
+<body>
+	{% block pagehead %}
+		<div class="stagetitle">
+		<h1>{{ pagetitle }}</h1>
+
+		<a href="{{ login_out_url | safe }}">{{ linktext }}</a>
+
+		<div class="subtitle">
+			<h4>{{ pagesubtitle }}</h4>
+		</div>
+		{% if is_admin == 1 %}
+		<div><a href="/addcontent">Add Content</a>
+		{% endif %}
+	{% endblock %}
+	<hr>
+	<div>Link to Fizzbuzz Demo: &nbsp;
+		<a href="https://affable-ruler-94808.appspot.com/fizzbuzz?n=50">Fizzbuzz Demo</a>
+	</div>
+	<hr>
+    {% block content %}{% endblock %}
+	
+	{% block footer %}
+		</div>
+	</div>
+</body>
+</html>
+	{% endblock %}
+	

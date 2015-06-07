@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+	{% block content %}
+		{% for note in editnote recursive %}
+			{% set outer_loop = loop %}
+			<hr>
+			<b>Add or edit Note</b><br><br>
+			<div id = "form">
+			{% if add == 1 %}
+			<form id="noteform" action="/addcontent" method="POST">
+			{% else %}
+			<form id="noteform" action="/editcontent" method="POST">
+			{% endif %}
+
+			{% if returnvalue %}
+				<div style="color: red" >{{ returnvalue }}</div>
+			{% endif %}
+			
+			<label>
+				Header:
+			</label>
+
+			<input type="text" name="header" {% if add == 1 and returnvalue == "Saved!" %} value="Header" {% else %} value="{{ note.header }}" {% endif %}>
+			
+			<label>
+				Subheader:
+			</label>
+			
+			<input type="text" name="subheader" {% if add == 1 and returnvalue == "Saved!" %} value="Subheader" {% else %} value="{{ note.subheader }}" {% endif %}>
+			<br>
+			<label>
+				Noteindex:
+			</label>
+			
+			<input type="text" name="noteindex"{% if add == 1 and returnvalue == "Saved!" %} {% else %} value="{{ note.noteid }}" {% endif %}>
+			<br>		
+			<label>
+				Note:
+			</label>
+
+			<textarea name="note" cols="50" rows="10">{% if add == 1 and returnvalue == "Saved!" %}Your Note{% else %}{{ note.note }}{% endif %}</textarea>
+			<br>
+			
+			<input type="submit" value="Save Note">
+		</form>
+		
+		{% endfor %}
+	{% endblock %}
