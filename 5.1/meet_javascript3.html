@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Meet Javascript3 - Biography Quiz</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="helper.js"></script>
+		<script>
+		function printBio(){
+			var skills = ["1", "2", "3"];
+			var bio = {
+				"name" : "Hans",
+				"role" : "Student",
+				"contact" : "hb@niwo.tv",
+				"pic" : "https://lh3.googleusercontent.com/-awOb9syr3do/AAAAAAAAAAI/AAAAAAAAiDU/fHdk2WX5BQk/s120-c/photo.jpg",
+				"msg" : "Welcome",
+				"skills" : skills			
+				}
+			bio.mynickname = "hansemann" ;
+			bio["age"] = "uhhhhh" ;
+				$("#main").append(bio.msg);
+				$("#main").append(bio.name);
+				$("#main").append(bio.mynickname);
+				$("#main").append("<hr>");
+				$("#main").append(bio.age);
+		};
+		</script>
+	</head>		
+	<body onload="printBio();">
+		Meet Javascript3 - Biography Quiz<br>
+		<div id="main"><hr></div>
+
+		
+		
+	</body>
+</html>

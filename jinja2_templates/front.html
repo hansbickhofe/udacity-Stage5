@@ -1,0 +1,21 @@
+<body>
+<h1>/ascii/</h1>
+<form method="post">
+	<label for="title"><b>title</b></label><br>
+	<input type="text" name="title"></input>
+	<br>
+	<br>
+
+	<label for="art"><b>art</b></label><br>
+	<textarea type="text" name="art"></textarea>
+	<br>
+
+	<input type="submit"></input>
+</form>
+{% for a in arts %}
+
+<h2>{{ a.title }}</h2>
+<p>{{ a.art }}</h2>
+
+{% endfor %}
+</body>
